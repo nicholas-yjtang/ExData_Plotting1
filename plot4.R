@@ -9,6 +9,7 @@
 par(mfrow = c(2, 2), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0))
 
 #check if our read_data function exists, if it does not, source it
+#see the read_data.R file for the code on reading the data
 if(!exists("read_data", mode="function")) source("read_data.R")
 
 #we make an assumption that the data file is located in this location
