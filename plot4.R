@@ -2,6 +2,12 @@
 #@author Nicholas Tang
 #======================
 
+#set the par value
+#mfrow = c(2, 2) - 2x2 plots (total 4), row-wise
+#mar = c(4, 4, 2, 1) - set the margins between each plots
+#omar = c(0, 0, 2, 0)) - set the overall margins of the 4 plots together
+par(mfrow = c(2, 2), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0))
+
 #check if our read_data function exists, if it does not, source it
 if(!exists("read_data", mode="function")) source("read_data.R")
 
@@ -10,21 +16,6 @@ filename <- "./data/household_power_consumption.txt"
 
 #read the file, and set the corresponding data.frame object into DF
 DF <- read_data(filename)
-
-#set the par value
-#mfrow = c(2, 2) - 2x2 plots (total 4), row-wise
-#mar = c(4, 4, 2, 1) - set the margins between each plots
-#omar = c(0, 0, 2, 0)) - set the overall margins of the 4 plots together
-par(mfrow = c(2, 2), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0))
-
-#check if our read_data function exists, if it does not, source it
-#if(!exists("read_data", mode="function")) source("read_data.R")
-
-#we make an assumption that the data file is located in this location
-#filename <- "./data/household_power_consumption.txt"
-
-#read the file, and set the corresponding data.frame object into DF
-#DF <- read_data(filename)
 
 #we use with, to make it more convenient and readable
 with (DF, {
