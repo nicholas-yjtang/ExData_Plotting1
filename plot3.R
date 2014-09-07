@@ -9,7 +9,7 @@ if(!exists("read_data", mode="function")) source("read_data.R")
 filename <- "./data/household_power_consumption.txt"
 
 #read the file, and set the corresponding data.frame object into DF
-#DF <- read_data(filename)
+DF <- read_data(filename)
 
 #we use with, to make it more convenient and readable
 with (DF, {

@@ -2,6 +2,15 @@
 #@author Nicholas Tang
 #======================
 
+#check if our read_data function exists, if it does not, source it
+if(!exists("read_data", mode="function")) source("read_data.R")
+
+#we make an assumption that the data file is located in this location
+filename <- "./data/household_power_consumption.txt"
+
+#read the file, and set the corresponding data.frame object into DF
+DF <- read_data(filename)
+
 #set the par value
 #mfrow = c(2, 2) - 2x2 plots (total 4), row-wise
 #mar = c(4, 4, 2, 1) - set the margins between each plots
