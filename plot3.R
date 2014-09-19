@@ -12,6 +12,9 @@ filename <- "./data/household_power_consumption.txt"
 #read the file, and set the corresponding data.frame object into DF
 DF <- read_data(filename)
 
+#make sure we copy to png. default width and heigh is already 480x480
+png(file="plot3.png")
+
 #we use with, to make it more convenient and readable
 with (DF, {
 	#plot the first graph
@@ -43,12 +46,8 @@ with (DF, {
 		lwd=3, 
 		col=c("black", "red", "blue"), 
 		legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
-		cex=1.4
 		)
 })
-
-#make sure we copy to png. default width and heigh is already 480x480
-dev.copy(png, width=480, height=480, file="plot3.png")
 
 #make sure to switch off the png device
 dev.off()

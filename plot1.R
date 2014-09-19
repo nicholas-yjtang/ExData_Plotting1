@@ -12,6 +12,9 @@ filename <- "./data/household_power_consumption.txt"
 #read the file, and set the corresponding data.frame object into DF
 DF <- read_data(filename)
 
+#start the png device
+png(file="plot1.png")
+
 #create the actual plot using hist
 #DF$Global_active_power - the target is the Global_active_power column
 #col="red" - set the colour as red as indicated
@@ -21,9 +24,6 @@ hist(DF$Global_active_power,
 	col="red", 
 	main="Global Active Power", 
 	xlab="Global Active Power (kilowatts)")
-
-#make sure we copy to png. default width and heigh is already 480x480
-dev.copy(png, width=480, height=480, file="plot1.png")
 
 #make sure to switch off the png device
 dev.off()

@@ -12,6 +12,9 @@ filename <- "./data/household_power_consumption.txt"
 #read the file, and set the corresponding data.frame object into DF
 DF <- read_data(filename)
 
+#make sure we copy to png. default width and heigh is already 480x480
+png(file="plot2.png")
+
 #create the actual plot with the plot command
 #DF$Date_Time - x-axis, the date_time column created through our read_data function
 #DF$Global_active_power - y-axis, our global_active_power column
@@ -19,9 +22,6 @@ DF <- read_data(filename)
 #ylab="Global Active Power (kilowatts)" - label the y axis Global Active Power (kilowatts)
 #xlab="" - remove the default x axis label
 plot (DF$Date_Time, DF$Global_active_power, type="l", ylab="Global Active Power (kilowatts)", xlab="")
-
-#make sure we copy to png. default width and heigh is already 480x480
-dev.copy(png, file="plot2.png")
 
 #make sure to switch off the png device
 dev.off()

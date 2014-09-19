@@ -8,10 +8,12 @@ library(RCurl)
 #	power consumption Data Set"
 #==============================================================
 
-read_data <- function(filename) {
+read_data <- function(filename, url) {
 
+
+  
   #we use a library called sqldf, which allows reading in of large files without
-  #the required memory
+  #the required memory  
   DF <- read.csv.sql(filename, 
 		         #header exists in the csv file, so this must be true
                      header=TRUE,
@@ -31,4 +33,11 @@ read_data <- function(filename) {
 
   #return the data.frame object created
   DF
+}
+
+download_file <- function (fileUrl, destination) {  
+  x <- getBinaryURL(fileUrl, ssl.verifypeer=FALSE)
+  to.write = file(destination, "wb")
+  writeBin(x,to.write)
+  close(to.write)  
 }
